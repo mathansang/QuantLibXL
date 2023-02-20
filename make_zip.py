@@ -9,10 +9,9 @@ import argparse
 import re
 
 QLXL = "QuantLibXL"
-VERSION = "1.8.0"
-VERSION_ = "1_8_0"
-#VC_VERSION = "vc120"
-VC_VERSION = "vc90"
+VERSION = "1.29.0"
+VERSION_ = "1_29_0"
+VC_VERSION = "vc43"
 QLXL_VERSION = QLXL + "-" + VERSION
 ROOT_DIR = QLXL_VERSION + "\\"
 
@@ -29,7 +28,7 @@ class ZipFile:
         self.zipFile.close()
 
     def zip(self, sourcePath, targetPath = None):
-        print sourcePath
+        print(sourcePath)
         if targetPath is None:
             targetPath = self.root + sourcePath
         self.zipFile.write(sourcePath, targetPath)
@@ -40,7 +39,7 @@ class ZipFile:
                 for r in excludeFiles:
                     if r.match(fileName):
                         continue
-            print fileName
+            print(fileName)
             self.zip(fileName)
 
 class Selector:
@@ -100,7 +99,7 @@ class Selector:
 
 def prompt_exit(msg='', status=0):
     if msg:
-        print msg
+        print(msg)
     if sys.platform == 'win32':
         raw_input('press any key to exit')
     sys.exit(status)
@@ -261,7 +260,7 @@ elif 'static' == args['target']:
 elif 'staticX64' == args['target']:
     makeZipStaticX64()
 else:
-    print "Error - unsupported target : " + args['target']
+    print("Error - unsupported target : " + args['target'])
 
 raw_input('press any key to exit')
 

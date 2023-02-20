@@ -1,3 +1,3 @@
 
-"C:\Python27\python.exe" make_zip.py --target=source
+python make_zip.py --target=source
 

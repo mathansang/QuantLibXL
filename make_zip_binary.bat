@@ -1,3 +1,3 @@
 
-"C:\Python27\python.exe" make_zip.py --target=binary
+python make_zip.py --target=binary
 
